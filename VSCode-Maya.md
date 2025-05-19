@@ -8,6 +8,8 @@
 
 ### Step 3
 
+## (Optional) Autocompletion
+
 ## Troubleshooting FAQ
 
 ### 1) "I was able to send my Python code to Maya and create a basic sphere per the instructions, but I'm seeing the message: 'Import "maya.cmds" could not be resolved.'

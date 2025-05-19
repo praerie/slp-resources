@@ -10,7 +10,7 @@
 
 ### Set your interpreter to `mayapy`:
 
-* In VSCode, open the Command Palette (Ctrl+Shift+P on Windows/Linux or Cmd+Shift+P on macOS
+* In VSCode, open the Command Palette (`Ctrl+Shift+P` on Windows/Linux or `Cmd+Shift+P` on macOS)
 * Select `Python: Select Interpreter`
 * Choose your Maya Python path
   * On Windows: `C:\Program Files\Autodesk\Maya2025\bin\mayapy.exe`

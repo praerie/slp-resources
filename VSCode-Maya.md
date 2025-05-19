@@ -16,6 +16,7 @@
   * On Windows: `C:\Program Files\Autodesk\Maya2025\bin\mayapy.exe`
   * On Mac: `/applications/Autodesk/maya2025/Maya.app/Contents/bin/mayapy`
   * On Linux: `/usr/autodesk/maya2025/bin/mayapy`
+* You may be asked to select an environment, which is VSCode confirming your choice. Choose the top option, or whichever one clearly shows `mayapy`. If unsure, hover to confirm the full path matches one of the above. After selecting, you should see `mayapy` in the bottom-left status bar of VSCode, confirming that it is active and ready.
 
 ## (Optional) Autocompletion
 

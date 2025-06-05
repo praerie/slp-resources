@@ -42,7 +42,7 @@ Alternatively, if you'd like to inspect or tweak autocomplete behavior, you may 
 
 ### "I was able to send my Python code to Maya and create a basic sphere per the instructions, but I'm seeing the message: _Import "maya.cmds" could not be resolved._
 
-This warning is coming from your Python language server (usually Pylance in VSCode). It means your editor can't find the `maya` module in your current Python environment. This is expected because `maya.cmds` is only available through Maya's built-in Python interpreter, called `mayapy`, and not in your regular Python environment. Your code will still run fine when sent to Maya, so you can safely ignore the warning unless you want full autocomplete support (see next question).
+This warning is coming from your Python language server (usually Pylance in VSCode). It means your editor can't find the `maya` module in your current Python environment. This is expected because `maya.cmds` is only available through Maya's built-in Python interpreter, called `mayapy`, and not in your regular Python environment. Your code will still run fine when sent to Maya, so you can safely ignore the warning unless you want full autocomplete support (see Autocompletion above).
 
 ### "Why is autocomplete for maya.cmds nonfunctional?"
 

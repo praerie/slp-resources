@@ -12,10 +12,10 @@
 
 * In VSCode, open the Command Palette (`Ctrl+Shift+P` on Windows/Linux or `Cmd+Shift+P` on macOS)
 * Select `Python: Select Interpreter`
-* Choose your Maya Python path
-  * On Windows: `C:\Program Files\Autodesk\Maya2025\bin\mayapy.exe`
-  * On Mac: `/applications/Autodesk/maya2025/Maya.app/Contents/bin/mayapy`
-  * On Linux: `/usr/autodesk/maya2025/bin/mayapy`
+* Choose your Maya Python path, replacing ## with the year of your version
+  * On Windows: `C:\Program Files\Autodesk\Maya20##\bin\mayapy.exe`
+  * On Mac: `/applications/Autodesk/maya20##/Maya.app/Contents/bin/mayapy`
+  * On Linux: `/usr/autodesk/maya20##/bin/mayapy`
 * You may be asked to select an environment, which is VSCode confirming your choice. Choose the top option, or whichever one clearly shows `mayapy`. If unsure, hover to confirm the full path matches one of the above. After selecting, you should see `mayapy` in the bottom-left status bar of VSCode, confirming that it is active and ready.
 
 ## (Optional) Autocompletion

@@ -2,20 +2,52 @@
 
 ## Connect VSCode to Maya
 
-### Step 1
+### Step 1: Software Installation
 
-### Step 2
+Install [Maya](https://www.autodesk.com/products/maya/overview) and [VSCode](https://code.visualstudio.com/download)!
 
-### Step 3
+### Step 2: VSCode Extensions
+
+In VSCode, open the Extensions tab, located on the left sidebar and install the following:
+
+* **MayaCode**, which will send your code to Maya
+* **MayaPy**, a Python interpreter for Maya
+
+### Step 3: userSetup.py
+
+We are going to use a userSetup.py script to make Maya run specific commands at start up. It will run any Python commands that are in it and can be used to import libraries and add to the system path.
+
+**First,** locate your Maya scripts folder:
+
+| OS | Scripts Folder Location |
+|-|-|
+| Windows | `%USERPROFILE%\Documents\maya\<version>\scripts` |
+| Linux | `$HOME/maya/<version>/scripts` |
+| macOS | `$HOME/Library/Preferences/Autodesk/maya/<version>/scripts` |
+
+If you don't see a scripts folder at the listed path, open Maya's Script Editor and run `getenv("MAYA_APP_DIR")`. This will return the full path to your `MAYA_APP_DIR`. You can then navigate to `MAYA_APP_DIR/<version>/scripts` to create or edit your userSetup.py file.
+
+**Next,** create a new file in your Maya scripts folder called userSetup.py with the following content:
+
+```python
+import maya.cmds as cmds
+
+if not cmds.commandPort(':7001', q=True):
+    try:
+        cmds.commandPort(name=':7001', sourceType='python')
+    except RuntimeError as e:
+        print(f"Could not open commandPort on :7001 — {e}")
+```
+
 
 ### Set your interpreter to `mayapy`:
 
 * In VSCode, open the Command Palette (`Ctrl+Shift+P` on Windows/Linux or `Cmd+Shift+P` on macOS)
 * Select `Python: Select Interpreter`
-* Choose your Maya Python path, replacing ## with the year of your version
-  * On Windows: `C:\Program Files\Autodesk\Maya20##\bin\mayapy.exe`
-  * On Mac: `/applications/Autodesk/maya20##/Maya.app/Contents/bin/mayapy`
-  * On Linux: `/usr/autodesk/maya20##/bin/mayapy`
+* Choose your Maya Python path
+  * On Windows: `C:\Program Files\Autodesk\<version>\bin\mayapy.exe`
+  * On Mac: `/applications/Autodesk/<version>/Maya.app/Contents/bin/mayapy`
+  * On Linux: `/usr/autodesk/<version>/bin/mayapy`
 * You may be asked to select an environment, which is VSCode confirming your choice. Choose the top option, or whichever one clearly shows `mayapy`. If unsure, hover to confirm the full path matches one of the above. After selecting, you should see `mayapy` in the bottom-left status bar of VSCode, confirming that it is active and ready.
 
 ## (Optional) Autocompletion

@@ -27,7 +27,7 @@ We are going to use a userSetup.py script to make Maya run specific commands at 
 
 If you don't see a scripts folder at the listed path, open Maya's Script Editor and run `getenv("MAYA_APP_DIR")`. This will return the full path to your `MAYA_APP_DIR`. You can then navigate to `MAYA_APP_DIR/<version>/scripts` to create or edit your userSetup.py file.
 
-**Next,** create a new file in your Maya scripts folder called userSetup.py with the following content:
+**Next,** create a new file in your Maya scripts folder called `userSetup.py` with the following content:
 
 ```python
 import maya.cmds as cmds

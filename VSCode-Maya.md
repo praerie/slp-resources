@@ -6,16 +6,15 @@
 
 Install [Maya](https://www.autodesk.com/products/maya/overview) and [VSCode](https://code.visualstudio.com/download)!
 
-### Step 2: VSCode Extensions
+### Step 2: VSCode Extension
 
-In VSCode, open the Extensions tab, located on the left sidebar and install the following:
+In VSCode, open the Extensions tab, located on the left sidebar. Search for and install **MayaCode**, which sends Python and MEL code directly to Maya through a command port.
 
-* **MayaCode**, which will send your code to Maya
-* **MayaPy**, a Python interpreter for Maya
+Maya ships with a special Python interpreter called `mayapy`, but you do not need to set this as your interpreter in VSCode. Instead, keep your system Python (e.g. Python 3.10) active in VSCode. MayaCode will handle sending your scripts to Maya directly. Setting mayapy as your VSCode interpreter is not recommended, as it can cause an endless "Reactiving Terminal" loop.
 
 ### Step 3: userSetup.py
 
-We are going to use a userSetup.py script to make Maya run specific commands at start up. It will run any Python commands that are in it and can be used to import libraries and add to the system path.
+We are going to use a userSetup.py script to make Maya run specific commands at start up. This script is automatically run when Maya launches. You can use it to open command ports, import custom modules, or extend Maya's behavior at startup.
 
 **First,** locate your Maya scripts folder:
 
@@ -39,16 +38,11 @@ if not cmds.commandPort(':7001', q=True):
         print(f"Could not open commandPort on :7001 — {e}")
 ```
 
+### Step 5: Test the connection
 
-### Set your interpreter to `mayapy`:
-
-* In VSCode, open the Command Palette (`Ctrl+Shift+P` on Windows/Linux or `Cmd+Shift+P` on macOS)
-* Select `Python: Select Interpreter`
-* Choose your Maya Python path
-  * On Windows: `C:\Program Files\Autodesk\<version>\bin\mayapy.exe`
-  * On Mac: `/applications/Autodesk/<version>/Maya.app/Contents/bin/mayapy`
-  * On Linux: `/usr/autodesk/<version>/bin/mayapy`
-* You may be asked to select an environment, which is VSCode confirming your choice. Choose the top option, or whichever one clearly shows `mayapy`. If unsure, hover to confirm the full path matches one of the above. After selecting, you should see `mayapy` in the bottom-left status bar of VSCode, confirming that it is active and ready.
+* Open Maya and click 'New Scene' from the launcher.
+* In VSCode, create a new Python file called `sphere.py` in your working directory (e.g. desktop or project folder). Avoid placing it inside Maya's `scripts` folder, as that is reserved for startup scripts like `userSetup.py`.
+* 
 
 ## (Optional) Autocompletion
 
